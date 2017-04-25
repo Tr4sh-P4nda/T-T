@@ -36,28 +36,28 @@
 			</a-assets>
 			
 <!-- Add the moon to the scene -->
-		    <a-sphere 
-		    	position='800 800 0' 
-		        radius="200" 
-		        src="images/moon.jpg"
-		        altspace-cursor-collider="enabled:true" 
-		        n-mesh-collider="type:environment;convex:false">
+			<a-sphere 
+				position='800 800 0' 
+				radius="200" 
+				src="images/moon.jpg"
+				altspace-cursor-collider="enabled:true" 
+				n-mesh-collider="type:environment;convex:false">
 <!-- Add an animation to make it rotate -->
-		        <a-animation 
-		        	to='0 360 0' 
-		        	easing='linear' 
-		        	dur='1200000' 
-		        	repeat='indefinite'/>
-		    </a-sphere>
-	        <a-collada-model 
-		    	src="#mount-dae"
-		    	position="0 0.01 -50"
-		    	rotation="0 -90 0"
-		    	scale="5 5 5"
-		    	n-mesh-collider="type:environment;convex:false"
-		    	altspace-cursor-collider="enabled:true">
-		    </a-collada-model>
-	        <a-plane 
+			<a-animation 
+				to='0 360 0' 
+				easing='linear' 
+				dur='1200000' 
+				repeat='indefinite'/>
+			</a-sphere>
+			<a-collada-model 
+				src="#mount-dae"
+				position="0 0.01 -50"
+				rotation="0 -90 0"
+				scale="5 5 5"
+				n-mesh-collider="type:environment;convex:false"
+				altspace-cursor-collider="enabled:true">
+			</a-collada-model>
+			<a-plane 
 				src="images/grid.png"
 				width="1000"
 				height="1000"
@@ -65,12 +65,11 @@
 				rotation="90 0 0"
 				position="0 0 0"
 				n-mesh-collider="type:environment">
-		    </a-plane>
-			
-		    <a-sky 
-		    	src="images/stars35.jpg" 
-		    	radius="2000">
-		    </a-sky>
+			</a-plane>
+			<a-sky 
+				src="images/stars35.jpg" 
+				radius="2000">
+			</a-sky>
 		</a-scene>
 	</body>
 </html>
