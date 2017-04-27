@@ -5,8 +5,8 @@
       <author>Blender User</author>
       <authoring_tool>Blender 2.78.0 commit date:2017-02-24, commit time:14:33, hash:e92f235283</authoring_tool>
     </contributor>
-    <created>2017-04-27T11:58:19</created>
-    <modified>2017-04-27T11:58:19</modified>
+    <created>2017-04-27T12:19:30</created>
+    <modified>2017-04-27T12:19:30</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
@@ -98,10 +98,24 @@
       </extra>
     </light>
   </library_lights>
-  <library_images/>
+  <library_images>
+    <image id="mountold2" name="mountold2">
+      <init_from>mountold2.jpg</init_from>
+    </image>
+  </library_images>
   <library_effects>
-    <effect id="Mountain-effect">
+    <effect id="Material_002-effect">
       <profile_COMMON>
+        <newparam sid="mountold2-surface">
+          <surface type="2D">
+            <init_from>mountold2</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="mountold2-sampler">
+          <sampler2D>
+            <source>mountold2-surface</source>
+          </sampler2D>
+        </newparam>
         <technique sid="common">
           <phong>
             <emission>
@@ -111,7 +125,7 @@
               <color sid="ambient">0 0 0 1</color>
             </ambient>
             <diffuse>
-              <color sid="diffuse">0.64 0.64 0.64 1</color>
+              <texture texture="mountold2-sampler" texcoord="UVMap"/>
             </diffuse>
             <specular>
               <color sid="specular">0.5 0.5 0.5 1</color>
@@ -128,8 +142,8 @@
     </effect>
   </library_effects>
   <library_materials>
-    <material id="Mountain-material" name="Mountain">
-      <instance_effect url="#Mountain-effect"/>
+    <material id="Material_002-material" name="Material_002">
+      <instance_effect url="#Material_002-effect"/>
     </material>
   </library_materials>
   <library_geometries>
@@ -167,7 +181,7 @@
         <vertices id="Landscape-mesh-vertices">
           <input semantic="POSITION" source="#Landscape-mesh-positions"/>
         </vertices>
-        <polylist material="Mountain-material" count="21632">
+        <polylist material="Material_002-material" count="21632">
           <input semantic="VERTEX" source="#Landscape-mesh-vertices" offset="0"/>
           <input semantic="NORMAL" source="#Landscape-mesh-normals" offset="1"/>
           <input semantic="TEXCOORD" source="#Landscape-mesh-map" offset="2" set="0"/>
@@ -193,7 +207,7 @@
         <instance_geometry url="#Landscape-mesh" name="Landscape">
           <bind_material>
             <technique_common>
-              <instance_material symbol="Mountain-material" target="#Mountain-material">
+              <instance_material symbol="Material_002-material" target="#Material_002-material">
                 <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
               </instance_material>
             </technique_common>
