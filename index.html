@@ -12,13 +12,13 @@
 			<a-assets>
 				<a-asset-item 
 					id="mount-obj" 
-					src="Mountain.obj"></a-asset-item>
+					src="assets/Mountain.obj"></a-asset-item>
 				<a-asset-item 
 					id="mount-mtl" 
-					src="Mountain.mtl"></a-asset-item>
+					src="assets/Mountain.mtl"></a-asset-item>
 				<!--a-asset-item 
 					id="mount-dae" 
-					src="Mountain.dae">
+					src="assets/Mountain.dae">
 				</a-asset-item-->
 			</a-assets>
 			
@@ -26,7 +26,7 @@
 		    <a-sphere 
 		    	position='800 800 0' 
 		        radius="200" 
-		        src="moon.jpg"
+		        src="images/moon.jpg"
 		        altspace-cursor-collider="enabled:true" 
 		        n-mesh-collider="type:environment;convex:false">
 <!-- Add an animation to make it rotate -->
@@ -38,8 +38,10 @@
 		    </a-sphere>
 			<a-entity 
 				obj-model="obj: #mount-obj; mtl: #mount-mtl" 
-				rotation="0 0 0" 
-				altspace-cursor-collider="enabled: false">
+				rotation="0 0 0"
+				scale="5 5 5"
+				altspace-cursor-collider="enabled: true"
+				n-mesh-collider="type:environment;convex:false">
 			</a-entity>
 	        <!--a-collada-model 
 		    	src="#mount-dae"
@@ -50,7 +52,7 @@
 		    	altspace-cursor-collider="enabled:true">
 		    </a-collada-model-->
 	        <a-plane 
-				src="grid.png"
+				src="images/grid.png"
 				width="1000"
 				height="1000"
 				material="repeat: 1000 1000; side: double"
@@ -60,7 +62,7 @@
 		    </a-plane>
 			
 		    <a-sky 
-		    	src="stars35.jpg" 
+		    	src="images/stars35.jpg" 
 		    	radius="2000">
 		    </a-sky>
 		</a-scene>
