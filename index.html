@@ -10,16 +10,16 @@
 		<a-scene 
 			altspace=fullspace:true>
 			<a-assets>
-				<a-asset-item 
+				<!--a-asset-item 
 					id="mount-obj" 
 					src="assets/Mountain.obj"></a-asset-item>
 				<a-asset-item 
 					id="mount-mtl" 
-					src="assets/Mountain.mtl"></a-asset-item>
-				<!--a-asset-item 
+					src="assets/Mountain.mtl"></a-asset-item-->
+				<a-asset-item 
 					id="mount-dae" 
 					src="assets/Mountain.dae">
-				</a-asset-item-->
+				</a-asset-item>
 			</a-assets>
 			
 <!-- Add the moon to the scene -->
@@ -36,22 +36,22 @@
 		        	dur='1200000' 
 		        	repeat='indefinite'/>
 		    </a-sphere>
-			<a-entity 
+			<!--a-entity 
 				position="0 0 0"
 				obj-model="obj: #mount-obj; mtl: #mount-mtl" 
 				rotation="0 0 0"
 				scale="250 250 250"
 				altspace-cursor-collider="enabled: true"
 				n-mesh-collider="type:environment;convex:false">
-			</a-entity>
-	        <!--a-collada-model 
+			</a-entity-->
+	        <a-collada-model 
 		    	src="#mount-dae"
 		    	position="0 0.01 -50"
 		    	rotation="0 -90 0"
 		    	scale="5 5 5"
 		    	n-mesh-collider="type:environment;convex:false"
 		    	altspace-cursor-collider="enabled:true">
-		    </a-collada-model-->
+		    </a-collada-model>
 	        <!--a-plane 
 				src="images/grid.png"
 				width="1000"
